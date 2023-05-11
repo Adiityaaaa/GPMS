@@ -1,16 +1,11 @@
-
-html,body{
-    height: 100%;
-
-}
 body{   
-    
-    background-color: rgb(148, 148, 218);
-    background-size: 100%;
-
+    background: #a3bfd4;
+    /* background-image: url(niet.jpg);
+    opacity: 5%;
+    background-repeat: no-repeat;   */
 }  
 #frm{  
-    border: solid rgb(70, 69, 69) 4px;  
+    border: solid gray 1px;  
     width:25%;  
     border-radius: 2px;  
     margin: 120px auto;  

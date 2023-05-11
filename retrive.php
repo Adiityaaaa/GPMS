@@ -1,6 +1,6 @@
 <?php
 include_once 'database.php';
-$result = mysqli_query($conn,"SELECT * FROM backup");
+$result = mysqli_query($conn,"SELECT * FROM requestform");
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,7 +13,7 @@ $result = mysqli_query($conn,"SELECT * FROM backup");
 <?php
 if (mysqli_num_rows($result) > 0) {
 ?>
-<form>
+<form  action="accept.php" method="POST">
   <table>
   
   <tr>
@@ -26,8 +26,6 @@ if (mysqli_num_rows($result) > 0) {
     <td>outtime</td>
     <td>intime</td>
     <td>place</td>
-    <td>status</td>
-
   </tr>
 <?php
 $i=0;
@@ -43,7 +41,7 @@ while($row = mysqli_fetch_array($result)) {
     <td><?php echo $row["outtime"]; ?></td>
     <td><?php echo $row["intime"]; ?></td>
     <td><?php echo $row["place"]; ?></td>
-    <td><?php echo $row["status"]; ?></td>
+    <?php echo "<td><a href='accept.php?rollno=$row[rollno]'>Accept</a> | <a href='decline.php?rollno=$row[rollno]'>Decline</a></td></tr>" ?>
 
 
 </tr>
